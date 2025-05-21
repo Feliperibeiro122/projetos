@@ -1,0 +1,143 @@
+body {
+    background-color: aqua;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: aquamarine;
+}
+
+.painel {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.painel:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+/* Contêiner que ocupa a altura restante da tela */
+.form-wrapper {
+    min-height: calc(100vh - 100px); /* espaço do header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    background-color: #00ffff;
+    box-sizing: border-box;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 700px;
+    background-color: #ffffff10;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.campo-form label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.campo-form input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button {
+    align-self: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Lista de sugestões (autocomplete) */
+#sugestoes {
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (min-width: 600px) {
+    .campo-form {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .campo-form label {
+        width: 200px;
+        text-align: right;
+    }
+
+    .campo-form input[type="text"] {
+        flex: 1;
+    }
+}
+
+
+.container-pai {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center;     /* centraliza verticalmente */
+    height: 200px;    
+}
+
+.escola {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    height: 250px;    
+}
+
+footer {
+    text-align: center;
+    gap: 10px;
+}

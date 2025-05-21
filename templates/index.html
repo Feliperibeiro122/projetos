@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+    <title>BIBLIOTECA ESCOLA</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'index' %}" class="painel">Início</a>
+        <a href="{% url 'cadastro' %}" class="painel">Cadastro de alunos</a>
+        <a href="{% url 'emprestimo' %}" class="painel">Empréstimo e devoluções</a>
+    </header>
+    <div class="container-pai">
+        <h1 class="Escola">E.M Pe José Valentim</h1>
+    </div>
+    <div>
+        <img src="{% static 'assets/escola.jpg' %}">
+    </div>
+    
+    
+    
+    <footer>&#169 2025 Felipe da silva Ribeiro</footer>
+</body>
+</html>

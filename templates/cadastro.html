@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>BIBLIOTECA ESCOLA</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'index' %}" class="painel">Início</a>
+        <a href="{% url 'cadastro' %}" class="painel">Cadastro de alunos</a>
+        <a href="{% url 'emprestimo' %}" class="painel">Empréstimo e devoluções</a>
+    </header>
+    <main class="form-wrapper">
+        <h2>Cadastro dos alunos ou professores</h2>
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="button">Cadastrar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>&#169 2025 Felipe da silva Ribeiro</footer>
+</body>
+</html>
