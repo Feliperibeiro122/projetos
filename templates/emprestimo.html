@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>BIBLIOTECA ESCOLA</title>
 </head>
+<!-- Direciona para as outras páginas -->
 <body>
     <header>
         <a href="{% url 'index' %}" class="painel">Início</a>
-        <a href="{% url 'cadastro' %}" class="painel">Cadastro de alunos</a>
+        <a href="{% url 'cadastro' %}" class="painel">Cadastro de alunos e professores</a>
         <a href="{% url 'emprestimo' %}" class="painel">Empréstimo e devoluções</a>
     </header>
+    <!-- Form para empréstimo -->
     <main class="form-wrapper">
         <h2>Empréstimo e devoluções dos livros</h2>
         <div class="form-container">
@@ -24,13 +26,14 @@
             <p><label for="id_descricao">Descrição:</label>
             <input type="text" name="descricao" required id="id_descricao"></p>
 
-            <p><label for="campo-nome">Nome do aluno/professor:</label>
-            <input type="text" name="nome_pessoa" id="campo-nome" autocomplete="off">
-            <ul id="sugestoes"></ul></p>
-
+            <p><label for="campo-nome">Nome do aluno/professor:</label></p>
+            <div class="autocomplete-container">
+                <input type="text" name="nome_pessoa" id="campo-nome" autocomplete="off">
+                <ul id="nome-alunos"></ul>
+            </div>
             <button type="submit" class="button">Emprestar</button>
         </form>
-
+<!-- Histórico de empréstimo -->
         </div>
         <div class="emprestimos-lista">
             <h3>Livros emprestados</h3>
@@ -38,6 +41,7 @@
                 {% if not emprestimo.devolvido %}
                 <p>
                     <strong>{{ emprestimo.titulo }}</strong> para <em>{{ emprestimo.pessoa.nome }}</em> —
+                    devolver até <strong>{{ emprestimo.data_devolucao_prevista|date:"d/m/Y" }}</strong> —
                     <a href="{% url 'devolver' emprestimo.id %}" class="devolver-btn">Devolver</a>
                 </p>
                 {% endif %}
@@ -54,10 +58,11 @@
         </div>
 
     </main>
+    <!-- Busca pelo aluno cadastrado e mostra como sugestão -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const campoNome = document.getElementById('campo-nome');
-            const sugestoes = document.getElementById('sugestoes');
+            const sugestoes = document.getElementById('nome-alunos');
 
             campoNome.addEventListener('input', () => {
                 const termo = campoNome.value;

@@ -9,10 +9,11 @@
 
     <title>BIBLIOTECA ESCOLA</title>
 </head>
+<!-- Direciona para as outras páginas -->
 <body>
     <header>
         <a href="{% url 'index' %}" class="painel">Início</a>
-        <a href="{% url 'cadastro' %}" class="painel">Cadastro de alunos</a>
+        <a href="{% url 'cadastro' %}" class="painel">Cadastro de alunos e professores</a>
         <a href="{% url 'emprestimo' %}" class="painel">Empréstimo e devoluções</a>
     </header>
     <div class="container-pai">
@@ -21,7 +22,10 @@
     <div>
         <img src="{% static 'assets/escola.jpg' %}">
     </div>
-    
+    <div class="container-pai-sobre">
+       <h2 class="sobre">SOBRE</h2>
+        <p>Esse site tem o objetivo de realizar o cadastro de alunos/professores e livros, além da realização de empréstimos e devoluções dos livros.</p>
+    </div>
     
     
     <footer>&#169 2025 Felipe da silva Ribeiro</footer>

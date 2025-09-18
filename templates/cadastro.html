@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>BIBLIOTECA ESCOLA</title>
 </head>
+<!-- Direciona para as outras páginas -->
 <body>
     <header>
         <a href="{% url 'index' %}" class="painel">Início</a>
-        <a href="{% url 'cadastro' %}" class="painel">Cadastro de alunos</a>
+        <a href="{% url 'cadastro' %}" class="painel">Cadastro de alunos e professores</a>
         <a href="{% url 'emprestimo' %}" class="painel">Empréstimo e devoluções</a>
     </header>
+    <!-- Form para cadastro -->
     <main class="form-wrapper">
         <h2>Cadastro dos alunos ou professores</h2>
         <div class="form-container">

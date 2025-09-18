@@ -1,6 +1,7 @@
 body {
-    background-color: aqua;
+    background-color: #1F1829;
     margin: 0;
+    color: #f5f5f5;
 }
 
 header {
@@ -8,7 +9,7 @@ header {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background-color: aquamarine;
+    background-color: #0A0809;
 }
 
 .painel {
@@ -16,14 +17,14 @@ header {
     font-size: 14px;
     color: #d4af37;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 10px 15px;
+    letter-spacing: 1px;
+    padding: 10px 50px;
     transition: background-color 0.3s;
     text-decoration: none;
 }
 
 .painel:hover {
-    background-color: #ddd;
+    background-color: #4345DB;
     border-radius: 5px;
 }
 
@@ -35,7 +36,7 @@ header {
     align-items: center;
     padding: 20px;
     gap: 20px;
-    background-color: #00ffff;
+    background-color: #1F1829;
     box-sizing: border-box;
 }
 
@@ -87,20 +88,29 @@ header {
     background-color: #0056b3;
 }
 
-/* Lista de sugestões (autocomplete) */
-#sugestoes {
-    margin-top: 5px;
-    border: 1px solid #ccc;
+.autocomplete-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Posiciona a lista abaixo ou acima do input */
+#nome-alunos {
+    position: absolute;
+    top: 100%; /* coloca logo abaixo do input */
+    left: 0;
+    width: 100%;
     background-color: white;
+    color: #0A0809;
     list-style: none;
     padding: 0;
+    margin: 5px 0 0 0;
     border-radius: 5px;
     max-height: 150px;
     overflow-y: auto;
     z-index: 10;
-    position: absolute;
-    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+
 
 /* Responsividade */
 @media (min-width: 600px) {
@@ -126,6 +136,26 @@ header {
     align-items: center;     /* centraliza verticalmente */
     height: 200px;    
 }
+
+.container-pai-sobre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    width: 100%;
+}
+
+.container-pai-sobre p {
+    text-align: center;
+    margin: 10px auto;
+    max-width: 600px;  /* limite para não ocupar a tela toda */
+    line-height: 1.5;  /* melhora a leitura */
+}
+
+
 
 .escola {
     text-align: center;
